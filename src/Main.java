@@ -19,12 +19,15 @@ public class Main {
 
             personas[i] = new Persona(nombre, apellido, genero, edad);
         }
-
         //MOSTRAR nombres y generos de las 5 personas
         mostrarNombresYGeneros(personas);
 
-        // Calcular y mostrar promedio de edades
+        //MOSTRAR promedio de edades
         System.out.println("El PROMEDIO de EDAD de las 5 personas es: " + calcularPromedioEdad(personas));
+
+        // MOSTRAR cantidad de personas por género
+        System.out.println("CANTIDAD de personas con genero MASCULINO: " + contarGenero(personas, "Masculino"));
+        System.out.println("CANTIDAD de personas con genero FEMENINO: " + contarGenero(personas, "Femenino"));
 
         scanner.close();
     }
@@ -45,3 +48,17 @@ public class Main {
         }
         return (double) sumaEdades / personas.length;
     }
+
+    // D Y E) METODO para CONTAR la CANTIDAD de personas por cada género
+    // POLIMORFISMO Este metodo permite contar diferentes tipos de genero segun un parametro
+    public static int contarGenero(Persona[] personas, String generoBuscado) {
+        int contador = 0;
+        for (Persona persona : personas) {
+            if (persona.getGenero().equalsIgnoreCase(generoBuscado)) {
+                contador++;
+            }
+        }
+        return contador;
+    }
+}
+
