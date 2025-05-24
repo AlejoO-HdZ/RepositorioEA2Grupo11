@@ -23,6 +23,9 @@ public class Main {
         //MOSTRAR nombres y generos de las 5 personas
         mostrarNombresYGeneros(personas);
 
+        // Calcular y mostrar promedio de edades
+        System.out.println("El PROMEDIO de EDAD de las 5 personas es: " + calcularPromedioEdad(personas));
+
         scanner.close();
     }
 
@@ -32,4 +35,13 @@ public class Main {
         for (Persona persona : personas) {
             System.out.println("Nombre: " + persona.getNombre() + ", Género: " + persona.getGenero());
         }
+    }
+
+    //C) METODO para CALCULAR PROMEDIO de edad
+    public static double calcularPromedioEdad(Persona[] personas) {
+        int sumaEdades = 0;
+        for (Persona persona : personas) {
+            sumaEdades += persona.getEdad();
+        }
+        return (double) sumaEdades / personas.length;
     }
