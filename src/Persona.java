@@ -5,6 +5,7 @@ public class Persona {
     private String genero; //Atributo Privado genero, solo accesible mediante metodo publico (Getters)
     private int edad; //Atributo Privado edad, solo accesible mediante metodo publico (Getters)
 
+
     // CONSTRUCTOR para inicializar el objeto Persona
     public Persona(String nombre, String apellido, String genero, int edad) {
         this.nombre = nombre;
@@ -13,3 +14,17 @@ public class Persona {
         this.edad = edad;
     }
 
+    //ABSTRACCION (Al ocultar la Clase Persona se exponen solo metodos necesarios GETTERS
+    //Métodos de acceso (Getters)
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+}
